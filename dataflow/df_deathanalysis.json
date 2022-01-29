@@ -20,7 +20,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "CountriesbyPopulation",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
