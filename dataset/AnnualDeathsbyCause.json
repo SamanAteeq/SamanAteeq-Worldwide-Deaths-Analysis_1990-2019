@@ -10,6 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": "annual-number-of-deaths-by-cause.csv",
 				"container": "projectdatafiles"
 			},
 			"columnDelimiter": ",",
