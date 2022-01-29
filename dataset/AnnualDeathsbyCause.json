@@ -2,7 +2,7 @@
 	"name": "AnnualDeathsbyCause",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage1",
+			"referenceName": "AzureBlobStorageIMT562A1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
