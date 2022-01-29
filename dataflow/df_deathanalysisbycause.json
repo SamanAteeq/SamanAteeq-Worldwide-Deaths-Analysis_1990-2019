@@ -1,0 +1,48 @@
+{
+	"name": "df_deathanalysisbycause",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "AnnualDeathsbyCause",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "CountryList",
+						"type": "DatasetReference"
+					},
+					"name": "source2"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "AnnualDeathsbyCauseTransformed",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Select1"
+				},
+				{
+					"name": "Unpivot1"
+				},
+				{
+					"name": "Join1"
+				},
+				{
+					"name": "Select2"
+				}
+			],
+			"script": "source(output(\n\t\tEntity as string,\n\t\tCode as string,\n\t\tYear as short,\n\t\t{Number of executions (Amnesty International)} as long,\n\t\t{Deaths - Meningitis - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Neoplasms - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Fire, heat, and hot substances - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Malaria - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Drowning - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Interpersonal violence - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - HIV/AIDS - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Drug use disorders - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Tuberculosis - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Road injuries - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Maternal disorders - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Lower respiratory infections - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Neonatal disorders - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Alcohol use disorders - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Exposure to forces of nature - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Diarrheal diseases - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Environmental heat and cold exposure - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Nutritional deficiencies - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Self-harm - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Conflict and terrorism - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Diabetes mellitus - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Poisonings - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Protein-energy malnutrition - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Terrorism (deaths)} as long,\n\t\t{Deaths - Cardiovascular diseases - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Chronic kidney disease - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Chronic respiratory diseases - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Cirrhosis and other chronic liver diseases - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Digestive diseases - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Acute hepatitis - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Alzheimer's disease and other dementias - Sex: Both - Age: All Ages (Number)} as long,\n\t\t{Deaths - Parkinson's disease - Sex: Both - Age: All Ages (Number)} as long\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source1\nsource(output(\n\t\tId as string,\n\t\tCountry as string\n\t),\n\tallowSchemaDrift: true,\n\tvalidateSchema: false,\n\tignoreNoFilesFound: false) ~> source2\nsource1 select(mapColumn(\n\t\tCountry = Entity,\n\t\tYear,\n\t\tExecutions = {Number of executions (Amnesty International)},\n\t\tMeningitis = {Deaths - Meningitis - Sex: Both - Age: All Ages (Number)},\n\t\tNeoplasms = {Deaths - Neoplasms - Sex: Both - Age: All Ages (Number)},\n\t\t{Fire, heat, and hot substances} = {Deaths - Fire, heat, and hot substances - Sex: Both - Age: All Ages (Number)},\n\t\tMalaria = {Deaths - Malaria - Sex: Both - Age: All Ages (Number)},\n\t\tDrowning = {Deaths - Drowning - Sex: Both - Age: All Ages (Number)},\n\t\t{Interpersonal violence} = {Deaths - Interpersonal violence - Sex: Both - Age: All Ages (Number)},\n\t\t{HIV/AIDS} = {Deaths - HIV/AIDS - Sex: Both - Age: All Ages (Number)},\n\t\t{Drug use disorders} = {Deaths - Drug use disorders - Sex: Both - Age: All Ages (Number)},\n\t\tTuberculosis = {Deaths - Tuberculosis - Sex: Both - Age: All Ages (Number)},\n\t\t{Road injuries} = {Deaths - Road injuries - Sex: Both - Age: All Ages (Number)},\n\t\t{Maternal disorders} = {Deaths - Maternal disorders - Sex: Both - Age: All Ages (Number)},\n\t\t{Lower respiratory infections} = {Deaths - Lower respiratory infections - Sex: Both - Age: All Ages (Number)},\n\t\t{Neonatal disorders} = {Deaths - Neonatal disorders - Sex: Both - Age: All Ages (Number)},\n\t\t{Alcohol use disorders} = {Deaths - Alcohol use disorders - Sex: Both - Age: All Ages (Number)},\n\t\t{Exposure to forces of nature} = {Deaths - Exposure to forces of nature - Sex: Both - Age: All Ages (Number)},\n\t\t{Diarrheal diseases} = {Deaths - Diarrheal diseases - Sex: Both - Age: All Ages (Number)},\n\t\t{Environmental heat and cold exposure} = {Deaths - Environmental heat and cold exposure - Sex: Both - Age: All Ages (Number)},\n\t\t{Nutritional deficiencies} = {Deaths - Nutritional deficiencies - Sex: Both - Age: All Ages (Number)},\n\t\t{Self-harm} = {Deaths - Self-harm - Sex: Both - Age: All Ages (Number)},\n\t\t{Conflict and terrorism} = {Deaths - Conflict and terrorism - Sex: Both - Age: All Ages (Number)},\n\t\t{Diabetes mellitus} = {Deaths - Diabetes mellitus - Sex: Both - Age: All Ages (Number)},\n\t\tPoisonings = {Deaths - Poisonings - Sex: Both - Age: All Ages (Number)},\n\t\t{Protein-energy malnutrition} = {Deaths - Protein-energy malnutrition - Sex: Both - Age: All Ages (Number)},\n\t\tTerrorism = {Terrorism (deaths)},\n\t\t{Cardiovascular diseases} = {Deaths - Cardiovascular diseases - Sex: Both - Age: All Ages (Number)},\n\t\t{Chronic kidney disease} = {Deaths - Chronic kidney disease - Sex: Both - Age: All Ages (Number)},\n\t\t{Chronic respiratory diseases} = {Deaths - Chronic respiratory diseases - Sex: Both - Age: All Ages (Number)},\n\t\t{Cirrhosis and other chronic liver diseases} = {Deaths - Cirrhosis and other chronic liver diseases - Sex: Both - Age: All Ages (Number)},\n\t\t{Digestive diseases} = {Deaths - Digestive diseases - Sex: Both - Age: All Ages (Number)},\n\t\t{Acute hepatitis} = {Deaths - Acute hepatitis - Sex: Both - Age: All Ages (Number)},\n\t\t{Alzheimer's disease and other dementias} = {Deaths - Alzheimer's disease and other dementias - Sex: Both - Age: All Ages (Number)},\n\t\t{Parkinson's disease} = {Deaths - Parkinson's disease - Sex: Both - Age: All Ages (Number)}\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select1\nSelect1 unpivot(output(\n\t\tDeathReasons as string,\n\t\tTotalDeaths as long\n\t),\n\tungroupBy(Country,\n\t\tYear),\n\tlateral: true,\n\tignoreNullPivots: false) ~> Unpivot1\nUnpivot1, source2 join(Unpivot1@Country == source2@Country,\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nJoin1 select(mapColumn(\n\t\tCountry = Unpivot1@Country,\n\t\tYear,\n\t\tDeathReasons,\n\t\tTotalDeaths,\n\t\tCountry = source2@Country\n\t),\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> Select2\nSelect2 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tpartitionFileNames:['transformed-annual-number-of-deaths-by-cause_Country.csv'],\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true,\n\tpartitionBy('hash', 1)) ~> sink1"
+		}
+	}
+}
