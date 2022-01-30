@@ -1,5 +1,5 @@
 {
-	"name": "df_deathanalysis",
+	"name": "df_population",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {

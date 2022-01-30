@@ -16,13 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "df_deathanalysis",
+						"referenceName": "df_deathanalysisbycause",
 						"type": "DataFlowReference",
 						"datasetParameters": {
-							"sink2": {
-								"FileName": "transformed-annual-number-of-deaths-by-cause.csv"
-							},
-							"sink3": {
+							"sink1": {
 								"FileName": "transformed-annual-number-of-deaths-by-cause.csv"
 							}
 						}
