@@ -13990,7 +13990,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Reading csv format data from azure blob storage via generatig SAS URL using Pandas</p>
+<p>Reading 'worldwide deaths' data from azure blob storage via generatig SAS URL using Pandas</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14214,7 +14214,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 
      </div>
@@ -14231,6 +14231,189 @@ a.anchor-link {
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(8590, 36)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Entity                                                                                       object
+Code                                                                                         object
+Year                                                                                          int64
+Number of executions (Amnesty International)                                                 object
+Deaths - Meningitis - Sex: Both - Age: All Ages (Number)                                    float64
+Deaths - Neoplasms - Sex: Both - Age: All Ages (Number)                                     float64
+Deaths - Fire, heat, and hot substances - Sex: Both - Age: All Ages (Number)                float64
+Deaths - Malaria - Sex: Both - Age: All Ages (Number)                                       float64
+Deaths - Drowning - Sex: Both - Age: All Ages (Number)                                      float64
+Deaths - Interpersonal violence - Sex: Both - Age: All Ages (Number)                        float64
+Deaths - HIV/AIDS - Sex: Both - Age: All Ages (Number)                                      float64
+Deaths - Drug use disorders - Sex: Both - Age: All Ages (Number)                            float64
+Deaths - Tuberculosis - Sex: Both - Age: All Ages (Number)                                  float64
+Deaths - Road injuries - Sex: Both - Age: All Ages (Number)                                 float64
+Deaths - Maternal disorders - Sex: Both - Age: All Ages (Number)                            float64
+Deaths - Lower respiratory infections - Sex: Both - Age: All Ages (Number)                  float64
+Deaths - Neonatal disorders - Sex: Both - Age: All Ages (Number)                            float64
+Deaths - Alcohol use disorders - Sex: Both - Age: All Ages (Number)                         float64
+Deaths - Exposure to forces of nature - Sex: Both - Age: All Ages (Number)                  float64
+Deaths - Diarrheal diseases - Sex: Both - Age: All Ages (Number)                            float64
+Deaths - Environmental heat and cold exposure - Sex: Both - Age: All Ages (Number)          float64
+Deaths - Nutritional deficiencies - Sex: Both - Age: All Ages (Number)                      float64
+Deaths - Self-harm - Sex: Both - Age: All Ages (Number)                                     float64
+Deaths - Conflict and terrorism - Sex: Both - Age: All Ages (Number)                        float64
+Deaths - Diabetes mellitus - Sex: Both - Age: All Ages (Number)                             float64
+Deaths - Poisonings - Sex: Both - Age: All Ages (Number)                                    float64
+Deaths - Protein-energy malnutrition - Sex: Both - Age: All Ages (Number)                   float64
+Terrorism (deaths)                                                                          float64
+Deaths - Cardiovascular diseases - Sex: Both - Age: All Ages (Number)                       float64
+Deaths - Chronic kidney disease - Sex: Both - Age: All Ages (Number)                        float64
+Deaths - Chronic respiratory diseases - Sex: Both - Age: All Ages (Number)                  float64
+Deaths - Cirrhosis and other chronic liver diseases - Sex: Both - Age: All Ages (Number)    float64
+Deaths - Digestive diseases - Sex: Both - Age: All Ages (Number)                            float64
+Deaths - Acute hepatitis - Sex: Both - Age: All Ages (Number)                               float64
+Deaths - Alzheimer&#39;s disease and other dementias - Sex: Both - Age: All Ages (Number)       float64
+Deaths - Parkinson&#39;s disease - Sex: Both - Age: All Ages (Number)                           float64
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Entity                                                                                       304
+Code                                                                                         217
+Year                                                                                          30
+Number of executions (Amnesty International)                                                  81
+Deaths - Meningitis - Sex: Both - Age: All Ages (Number)                                    8160
+Deaths - Neoplasms - Sex: Both - Age: All Ages (Number)                                     8160
+Deaths - Fire, heat, and hot substances - Sex: Both - Age: All Ages (Number)                8160
+Deaths - Malaria - Sex: Both - Age: All Ages (Number)                                       4201
+Deaths - Drowning - Sex: Both - Age: All Ages (Number)                                      8160
+Deaths - Interpersonal violence - Sex: Both - Age: All Ages (Number)                        8160
+Deaths - HIV/AIDS - Sex: Both - Age: All Ages (Number)                                      8157
+Deaths - Drug use disorders - Sex: Both - Age: All Ages (Number)                            8160
+Deaths - Tuberculosis - Sex: Both - Age: All Ages (Number)                                  8160
+Deaths - Road injuries - Sex: Both - Age: All Ages (Number)                                 8160
+Deaths - Maternal disorders - Sex: Both - Age: All Ages (Number)                            8160
+Deaths - Lower respiratory infections - Sex: Both - Age: All Ages (Number)                  8160
+Deaths - Neonatal disorders - Sex: Both - Age: All Ages (Number)                            8160
+Deaths - Alcohol use disorders - Sex: Both - Age: All Ages (Number)                         8160
+Deaths - Exposure to forces of nature - Sex: Both - Age: All Ages (Number)                  2587
+Deaths - Diarrheal diseases - Sex: Both - Age: All Ages (Number)                            8160
+Deaths - Environmental heat and cold exposure - Sex: Both - Age: All Ages (Number)          8160
+Deaths - Nutritional deficiencies - Sex: Both - Age: All Ages (Number)                      8160
+Deaths - Self-harm - Sex: Both - Age: All Ages (Number)                                     8160
+Deaths - Conflict and terrorism - Sex: Both - Age: All Ages (Number)                        3617
+Deaths - Diabetes mellitus - Sex: Both - Age: All Ages (Number)                             8160
+Deaths - Poisonings - Sex: Both - Age: All Ages (Number)                                    8160
+Deaths - Protein-energy malnutrition - Sex: Both - Age: All Ages (Number)                   8160
+Terrorism (deaths)                                                                           554
+Deaths - Cardiovascular diseases - Sex: Both - Age: All Ages (Number)                       8160
+Deaths - Chronic kidney disease - Sex: Both - Age: All Ages (Number)                        8160
+Deaths - Chronic respiratory diseases - Sex: Both - Age: All Ages (Number)                  8160
+Deaths - Cirrhosis and other chronic liver diseases - Sex: Both - Age: All Ages (Number)    8160
+Deaths - Digestive diseases - Sex: Both - Age: All Ages (Number)                            8160
+Deaths - Acute hepatitis - Sex: Both - Age: All Ages (Number)                               2351
+Deaths - Alzheimer&#39;s disease and other dementias - Sex: Both - Age: All Ages (Number)       4957
+Deaths - Parkinson&#39;s disease - Sex: Both - Age: All Ages (Number)                           3627
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Entity&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
@@ -14327,90 +14510,13 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Column entity has countries, income group, region, world values</p>
+<p>Column entity has 304 unique values which includes countries, income group, region, world values</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 8590 entries, 0 to 8589
-Data columns (total 36 columns):
- #   Column                                                                                    Non-Null Count  Dtype  
----  ------                                                                                    --------------  -----  
- 0   Entity                                                                                    8590 non-null   object 
- 1   Code                                                                                      6206 non-null   object 
- 2   Year                                                                                      8590 non-null   int64  
- 3   Number of executions (Amnesty International)                                              267 non-null    object 
- 4   Deaths - Meningitis - Sex: Both - Age: All Ages (Number)                                  8220 non-null   float64
- 5   Deaths - Neoplasms - Sex: Both - Age: All Ages (Number)                                   8220 non-null   float64
- 6   Deaths - Fire, heat, and hot substances - Sex: Both - Age: All Ages (Number)              8220 non-null   float64
- 7   Deaths - Malaria - Sex: Both - Age: All Ages (Number)                                     8220 non-null   float64
- 8   Deaths - Drowning - Sex: Both - Age: All Ages (Number)                                    8220 non-null   float64
- 9   Deaths - Interpersonal violence - Sex: Both - Age: All Ages (Number)                      8220 non-null   float64
- 10  Deaths - HIV/AIDS - Sex: Both - Age: All Ages (Number)                                    8220 non-null   float64
- 11  Deaths - Drug use disorders - Sex: Both - Age: All Ages (Number)                          8220 non-null   float64
- 12  Deaths - Tuberculosis - Sex: Both - Age: All Ages (Number)                                8220 non-null   float64
- 13  Deaths - Road injuries - Sex: Both - Age: All Ages (Number)                               8220 non-null   float64
- 14  Deaths - Maternal disorders - Sex: Both - Age: All Ages (Number)                          8220 non-null   float64
- 15  Deaths - Lower respiratory infections - Sex: Both - Age: All Ages (Number)                8220 non-null   float64
- 16  Deaths - Neonatal disorders - Sex: Both - Age: All Ages (Number)                          8220 non-null   float64
- 17  Deaths - Alcohol use disorders - Sex: Both - Age: All Ages (Number)                       8220 non-null   float64
- 18  Deaths - Exposure to forces of nature - Sex: Both - Age: All Ages (Number)                8220 non-null   float64
- 19  Deaths - Diarrheal diseases - Sex: Both - Age: All Ages (Number)                          8220 non-null   float64
- 20  Deaths - Environmental heat and cold exposure - Sex: Both - Age: All Ages (Number)        8220 non-null   float64
- 21  Deaths - Nutritional deficiencies - Sex: Both - Age: All Ages (Number)                    8220 non-null   float64
- 22  Deaths - Self-harm - Sex: Both - Age: All Ages (Number)                                   8220 non-null   float64
- 23  Deaths - Conflict and terrorism - Sex: Both - Age: All Ages (Number)                      8220 non-null   float64
- 24  Deaths - Diabetes mellitus - Sex: Both - Age: All Ages (Number)                           8220 non-null   float64
- 25  Deaths - Poisonings - Sex: Both - Age: All Ages (Number)                                  8220 non-null   float64
- 26  Deaths - Protein-energy malnutrition - Sex: Both - Age: All Ages (Number)                 8220 non-null   float64
- 27  Terrorism (deaths)                                                                        2891 non-null   float64
- 28  Deaths - Cardiovascular diseases - Sex: Both - Age: All Ages (Number)                     8220 non-null   float64
- 29  Deaths - Chronic kidney disease - Sex: Both - Age: All Ages (Number)                      8220 non-null   float64
- 30  Deaths - Chronic respiratory diseases - Sex: Both - Age: All Ages (Number)                8220 non-null   float64
- 31  Deaths - Cirrhosis and other chronic liver diseases - Sex: Both - Age: All Ages (Number)  8220 non-null   float64
- 32  Deaths - Digestive diseases - Sex: Both - Age: All Ages (Number)                          8220 non-null   float64
- 33  Deaths - Acute hepatitis - Sex: Both - Age: All Ages (Number)                             8220 non-null   float64
- 34  Deaths - Alzheimer&#39;s disease and other dementias - Sex: Both - Age: All Ages (Number)     8220 non-null   float64
- 35  Deaths - Parkinson&#39;s disease - Sex: Both - Age: All Ages (Number)                         8220 non-null   float64
-dtypes: float64(32), int64(1), object(3)
-memory usage: 2.4+ MB
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
@@ -14429,7 +14535,7 @@ memory usage: 2.4+ MB
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
@@ -14604,7 +14710,7 @@ dtype: int64</pre>
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">info</span>
 </pre></div>
 
      </div>
@@ -14621,6 +14727,69 @@ dtype: int64</pre>
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;bound method DataFrame.info of             Country  Year                                DeathReasons  \
+0       Afghanistan  2007                                  Executions   
+1       Afghanistan  2007                                  Meningitis   
+2       Afghanistan  2007                                   Neoplasms   
+3       Afghanistan  2007              Fire, heat, and hot substances   
+4       Afghanistan  2007                                     Malaria   
+...             ...   ...                                         ...   
+182155     Zimbabwe  2019  Cirrhosis and other chronic liver diseases   
+182156     Zimbabwe  2019                          Digestive diseases   
+182157     Zimbabwe  2019                             Acute hepatitis   
+182158     Zimbabwe  2019     Alzheimer&#39;s disease and other dementias   
+182159     Zimbabwe  2019                         Parkinson&#39;s disease   
+
+        TotalDeaths  
+0              15.0  
+1            2932.0  
+2           15924.0  
+3             481.0  
+4             392.0  
+...             ...  
+182155       2065.0  
+182156       4437.0  
+182157        136.0  
+182158        812.0  
+182159        232.0  
+
+[182160 rows x 4 columns]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data2</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -14648,7 +14817,7 @@ dtype: int64</pre>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">countrylist1</span><span class="o">=</span> <span class="n">data2</span><span class="p">[</span><span class="s1">&#39;Country&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
@@ -14711,6 +14880,12 @@ dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Reading country names from country list</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -15045,18 +15220,463 @@ dtype: int64</pre>
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Analyzing population data</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://imtprojectstorage.blob.core.windows.net/projectdatafiles/Countries%20by%20Population.csv?sp=r&amp;st=2022-01-30T03:47:12Z&amp;se=2022-01-30T11:47:12Z&amp;spr=https&amp;sv=2020-08-04&amp;sr=b&amp;sig=</span><span class="si">%2F</span><span class="s1">qQuAKP5%2BtAO4EZzWcLIO5H</span><span class="si">%2F</span><span class="s1">OVxUzddAvAVgeePkVtQ%3D&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
 </div>
 </div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(266, 65)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">dtypes</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Country Name       object
+Country Code       object
+Indicator Name     object
+Indicator Code     object
+1960              float64
+                   ...   
+2016              float64
+2017              float64
+2018              float64
+2019              float64
+2020              float64
+Length: 65, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Country Name      266
+Country Code      266
+Indicator Name      1
+Indicator Code      1
+1960              260
+                 ... 
+2016              262
+2017              262
+2018              262
+2019              262
+2020              262
+Length: 65, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Country Name      0
+Country Code      0
+Indicator Name    0
+Indicator Code    0
+1960              2
+                 ..
+2016              2
+2017              2
+2018              2
+2019              2
+2020              2
+Length: 65, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data3</span><span class="p">[</span><span class="s1">&#39;Country Name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([&#39;Aruba&#39;, &#39;Africa Eastern and Southern&#39;, &#39;Afghanistan&#39;,
+       &#39;Africa Western and Central&#39;, &#39;Angola&#39;, &#39;Albania&#39;, &#39;Andorra&#39;,
+       &#39;Arab World&#39;, &#39;United Arab Emirates&#39;, &#39;Argentina&#39;, &#39;Armenia&#39;,
+       &#39;American Samoa&#39;, &#39;Antigua and Barbuda&#39;, &#39;Australia&#39;, &#39;Austria&#39;,
+       &#39;Azerbaijan&#39;, &#39;Burundi&#39;, &#39;Belgium&#39;, &#39;Benin&#39;, &#39;Burkina Faso&#39;,
+       &#39;Bangladesh&#39;, &#39;Bulgaria&#39;, &#39;Bahrain&#39;, &#39;Bahamas&#39;,
+       &#39;Bosnia and Herzegovina&#39;, &#39;Belarus&#39;, &#39;Belize&#39;, &#39;Bermuda&#39;,
+       &#39;Bolivia&#39;, &#39;Brazil&#39;, &#39;Barbados&#39;, &#39;Brunei Darussalam&#39;, &#39;Bhutan&#39;,
+       &#39;Botswana&#39;, &#39;Central African Republic&#39;, &#39;Canada&#39;,
+       &#39;Central Europe and the Baltics&#39;, &#39;Switzerland&#39;, &#39;Channel Islands&#39;,
+       &#39;Chile&#39;, &#39;China&#39;, &#34;Cote d&#39;Ivoire&#34;, &#39;Cameroon&#39;, &#39;Congo, Dem. Rep.&#39;,
+       &#39;Congo, Rep.&#39;, &#39;Colombia&#39;, &#39;Comoros&#39;, &#39;Cabo Verde&#39;, &#39;Costa Rica&#39;,
+       &#39;Caribbean small states&#39;, &#39;Cuba&#39;, &#39;Curacao&#39;, &#39;Cayman Islands&#39;,
+       &#39;Cyprus&#39;, &#39;Czech Republic&#39;, &#39;Germany&#39;, &#39;Djibouti&#39;, &#39;Dominica&#39;,
+       &#39;Denmark&#39;, &#39;Dominican Republic&#39;, &#39;Algeria&#39;,
+       &#39;East Asia &amp; Pacific (excluding high income)&#39;,
+       &#39;Early-demographic dividend&#39;, &#39;East Asia &amp; Pacific&#39;,
+       &#39;Europe &amp; Central Asia (excluding high income)&#39;,
+       &#39;Europe &amp; Central Asia&#39;, &#39;Ecuador&#39;, &#39;Egypt&#39;, &#39;Euro area&#39;,
+       &#39;Eritrea&#39;, &#39;Spain&#39;, &#39;Estonia&#39;, &#39;Ethiopia&#39;, &#39;European Union&#39;,
+       &#39;Fragile and conflict affected situations&#39;, &#39;Finland&#39;, &#39;Fiji&#39;,
+       &#39;France&#39;, &#39;Faroe Islands&#39;, &#39;Micronesia, Fed. Sts.&#39;, &#39;Gabon&#39;,
+       &#39;United Kingdom&#39;, &#39;Georgia&#39;, &#39;Ghana&#39;, &#39;Gibraltar&#39;, &#39;Guinea&#39;,
+       &#39;Gambia&#39;, &#39;Guinea-Bissau&#39;, &#39;Equatorial Guinea&#39;, &#39;Greece&#39;,
+       &#39;Grenada&#39;, &#39;Greenland&#39;, &#39;Guatemala&#39;, &#39;Guam&#39;, &#39;Guyana&#39;,
+       &#39;High income&#39;, &#39;Hong Kong SAR, China&#39;, &#39;Honduras&#39;,
+       &#39;Heavily indebted poor countries (HIPC)&#39;, &#39;Croatia&#39;, &#39;Haiti&#39;,
+       &#39;Hungary&#39;, &#39;IBRD only&#39;, &#39;IDA &amp; IBRD total&#39;, &#39;IDA total&#39;,
+       &#39;IDA blend&#39;, &#39;Indonesia&#39;, &#39;IDA only&#39;, &#39;Isle of Man&#39;, &#39;India&#39;,
+       &#39;Not classified&#39;, &#39;Ireland&#39;, &#39;Iran&#39;, &#39;Iraq&#39;, &#39;Iceland&#39;, &#39;Israel&#39;,
+       &#39;Italy&#39;, &#39;Jamaica&#39;, &#39;Jordan&#39;, &#39;Japan&#39;, &#39;Kazakhstan&#39;, &#39;Kenya&#39;,
+       &#39;Kyrgyz Republic&#39;, &#39;Cambodia&#39;, &#39;Kiribati&#39;, &#39;St. Kitts and Nevis&#39;,
+       &#39;South Korea&#39;, &#39;Kuwait&#39;,
+       &#39;Latin America &amp; Caribbean (excluding high income)&#39;, &#39;Lao PDR&#39;,
+       &#39;Lebanon&#39;, &#39;Liberia&#39;, &#39;Libya&#39;, &#39;St. Lucia&#39;,
+       &#39;Latin America &amp; Caribbean&#39;,
+       &#39;Least developed countries: UN classification&#39;, &#39;Low income&#39;,
+       &#39;Liechtenstein&#39;, &#39;Sri Lanka&#39;, &#39;Lower middle income&#39;,
+       &#39;Low &amp; middle income&#39;, &#39;Lesotho&#39;, &#39;Late-demographic dividend&#39;,
+       &#39;Lithuania&#39;, &#39;Luxembourg&#39;, &#39;Latvia&#39;, &#39;Macao SAR, China&#39;,
+       &#39;St. Martin (French part)&#39;, &#39;Morocco&#39;, &#39;Monaco&#39;, &#39;Moldova&#39;,
+       &#39;Madagascar&#39;, &#39;Maldives&#39;, &#39;Middle East &amp; North Africa&#39;, &#39;Mexico&#39;,
+       &#39;Marshall Islands&#39;, &#39;Middle income&#39;, &#39;North Macedonia&#39;, &#39;Mali&#39;,
+       &#39;Malta&#39;, &#39;Myanmar&#39;,
+       &#39;Middle East &amp; North Africa (excluding high income)&#39;, &#39;Montenegro&#39;,
+       &#39;Mongolia&#39;, &#39;Northern Mariana Islands&#39;, &#39;Mozambique&#39;, &#39;Mauritania&#39;,
+       &#39;Mauritius&#39;, &#39;Malawi&#39;, &#39;Malaysia&#39;, &#39;North America&#39;, &#39;Namibia&#39;,
+       &#39;New Caledonia&#39;, &#39;Niger&#39;, &#39;Nigeria&#39;, &#39;Nicaragua&#39;, &#39;Netherlands&#39;,
+       &#39;Norway&#39;, &#39;Nepal&#39;, &#39;Nauru&#39;, &#39;New Zealand&#39;, &#39;OECD members&#39;, &#39;Oman&#39;,
+       &#39;Other small states&#39;, &#39;Pakistan&#39;, &#39;Panama&#39;, &#39;Peru&#39;, &#39;Philippines&#39;,
+       &#39;Palau&#39;, &#39;Papua New Guinea&#39;, &#39;Poland&#39;, &#39;Pre-demographic dividend&#39;,
+       &#39;Puerto Rico&#39;, &#39;North Korea&#39;, &#39;Portugal&#39;, &#39;Paraguay&#39;,
+       &#39;West Bank and Gaza&#39;, &#39;Pacific island small states&#39;,
+       &#39;Post-demographic dividend&#39;, &#39;French Polynesia&#39;, &#39;Qatar&#39;,
+       &#39;Romania&#39;, &#39;Russia&#39;, &#39;Rwanda&#39;, &#39;South Asia&#39;, &#39;Saudi Arabia&#39;,
+       &#39;Sudan&#39;, &#39;Senegal&#39;, &#39;Singapore&#39;, &#39;Solomon Islands&#39;, &#39;Sierra Leone&#39;,
+       &#39;El Salvador&#39;, &#39;San Marino&#39;, &#39;Somalia&#39;, &#39;Serbia&#39;,
+       &#39;Sub-Saharan Africa (excluding high income)&#39;, &#39;South Sudan&#39;,
+       &#39;Sub-Saharan Africa&#39;, &#39;Small states&#39;, &#39;Sao Tome and Principe&#39;,
+       &#39;Suriname&#39;, &#39;Slovakia&#39;, &#39;Slovenia&#39;, &#39;Sweden&#39;, &#39;Eswatini&#39;,
+       &#39;Sint Maarten (Dutch part)&#39;, &#39;Seychelles&#39;, &#39;Syria&#39;,
+       &#39;Turks and Caicos Islands&#39;, &#39;Chad&#39;,
+       &#39;East Asia &amp; Pacific (IDA &amp; IBRD countries)&#39;,
+       &#39;Europe &amp; Central Asia (IDA &amp; IBRD countries)&#39;, &#39;Togo&#39;, &#39;Thailand&#39;,
+       &#39;Tajikistan&#39;, &#39;Turkmenistan&#39;,
+       &#39;Latin America &amp; the Caribbean (IDA &amp; IBRD countries)&#39;,
+       &#39;Timor-Leste&#39;, &#39;Middle East &amp; North Africa (IDA &amp; IBRD countries)&#39;,
+       &#39;Tonga&#39;, &#39;South Asia (IDA &amp; IBRD)&#39;,
+       &#39;Sub-Saharan Africa (IDA &amp; IBRD countries)&#39;, &#39;Trinidad and Tobago&#39;,
+       &#39;Tunisia&#39;, &#39;Turkey&#39;, &#39;Tuvalu&#39;, &#39;Tanzania&#39;, &#39;Uganda&#39;, &#39;Ukraine&#39;,
+       &#39;Upper middle income&#39;, &#39;Uruguay&#39;, &#39;United States of America&#39;,
+       &#39;Uzbekistan&#39;, &#39;St. Vincent and the Grenadines&#39;, &#39;Venezuela&#39;,
+       &#39;British Virgin Islands&#39;, &#39;Virgin Islands (U.S.)&#39;, &#39;Vietnam&#39;,
+       &#39;Vanuatu&#39;, &#39;World&#39;, &#39;Samoa&#39;, &#39;Kosovo&#39;, &#39;Yemen&#39;, &#39;South Africa&#39;,
+       &#39;Zambia&#39;, &#39;Zimbabwe&#39;], dtype=object)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Analyzing tranformed populaton dataset</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data4</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://imtprojectstorage.blob.core.windows.net/projectdatafilestransformed/transformed-country-by-population.csv?sp=r&amp;st=2022-01-30T04:02:28Z&amp;se=2022-01-30T12:02:28Z&amp;spr=https&amp;sv=2020-08-04&amp;sr=b&amp;sig=hLg2WVQcWwyZXuf1k2W5YMpKhkgQfe7nzsd</span><span class="si">%2F</span><span class="s1">ZFKv8mI%3D&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data4</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>(5430, 3)</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data4</span><span class="o">.</span><span class="n">head</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>&lt;bound method NDFrame.head of       Population      Country  Year
+0     12412311.0  Afghanistan  1990
+1     13299016.0  Afghanistan  1991
+2     14485543.0  Afghanistan  1992
+3     15816601.0  Afghanistan  1993
+4     17075728.0  Afghanistan  1994
+...          ...          ...   ...
+5425  13814642.0     Zimbabwe  2015
+5426  14030338.0     Zimbabwe  2016
+5427  14236599.0     Zimbabwe  2017
+5428  14438812.0     Zimbabwe  2018
+5429  14645473.0     Zimbabwe  2019
+
+[5430 rows x 3 columns]&gt;</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data4</span><span class="o">.</span><span class="n">nunique</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Population    5415
+Country        181
+Year            30
+dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </div>
