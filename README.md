@@ -1,4 +1,4 @@
-It was my assignment submission to Interactive Data Visualization class.
+It was my assignment submission to Interactive Data Visualization class (IMT 562)
 
 Data Source 1: Our World in Data - https://ourworldindata.org/causes-of-death
 
