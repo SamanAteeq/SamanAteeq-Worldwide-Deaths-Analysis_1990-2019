@@ -10,3 +10,5 @@ Data Cleaning: Azure Data Factory
 Visualization: Tableau**
 
 Tableau Workbook Link: https://public.tableau.com/app/profile/saman.ateeq4840/viz/WorldwideDeathAnalysis/GeographicalAnalysis
+
+Please visit analysis report for additional details and insights.
