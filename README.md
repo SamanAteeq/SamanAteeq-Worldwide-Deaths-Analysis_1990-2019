@@ -11,4 +11,6 @@ Visualization: Tableau**
 
 Tableau Workbook Link: https://public.tableau.com/app/profile/saman.ateeq4840/viz/WorldwideDeathAnalysis/GeographicalAnalysis
 
-Please visit analysis report for additional details and insights.
+Please visit analysis report for additional details and insights (IMT 562-A2.pdf in main branch)
+
+Jupyter Notebook has been uploaded on JupyterNotebook_EDA branch
